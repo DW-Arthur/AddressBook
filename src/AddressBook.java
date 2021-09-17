@@ -17,6 +17,10 @@ public class AddressBook extends BuddyInfo{
         Scanner myObj = new Scanner(System.in);
         String nameAdd = myObj.nextLine();
         addBuddy(nameAdd);
+        BuddyInfo buddy = new BuddyInfo("Tom");
+        AddressBook addressBook = new AddressBook("new");
+        addressBook.addBuddy("Tom");
+        addressBook.removeBuddy("Tom");
         String nameDelete = myObj.nextLine();
         removeBuddy(nameDelete);
         System.out.println("test");
