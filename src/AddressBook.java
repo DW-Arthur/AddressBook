@@ -4,47 +4,47 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class AddressBook extends BuddyInfo{
-    private static ArrayList<BuddyInfo> buddyInfoList =new ArrayList<BuddyInfo>();
+    private  ArrayList<BuddyInfo> buddyInfoList =new ArrayList<BuddyInfo>();
     //String name = "test";
     //public ArrayList<BuddyInfo> buddyInfoList = new ArrayList<BuddyInfo>();
 
     public AddressBook(String name) {
+
         super(name);
+        buddyInfoList= new ArrayList<>();
     }
 
 
     public static void main(String[] args) {
-        Scanner myObj = new Scanner(System.in);
-        String nameAdd = myObj.nextLine();
-        addBuddy(nameAdd);
+        //Scanner myObj = new Scanner(System.in);
+        //String nameAdd = myObj.nextLine();
         BuddyInfo buddy = new BuddyInfo("Tom");
         AddressBook addressBook = new AddressBook("new");
-        addressBook.addBuddy("Tom");
-        addressBook.removeBuddy("Tom");
-        String nameDelete = myObj.nextLine();
-        removeBuddy(nameDelete);
+        addressBook.addBuddy(buddy);
+        addressBook.removeBuddy(0);
+        //String nameDelete = myObj.nextLine();
+
         System.out.println("test");
 
 
     }
-    public static ArrayList<BuddyInfo> addBuddy(String name){
+    public void addBuddy(BuddyInfo buddy){
         //String test;
-        BuddyInfo myObj = new BuddyInfo(name);
-        buddyInfoList.add(myObj);
+        if(buddy != null){
+            buddyInfoList.add(buddy);
+        }
+
         //String test = Arrays.toString(myObj.toArray());
-        String listString = buddyInfoList.stream().map(Object::toString)
-                .collect(Collectors.joining(", "));
-
-        System.out.println(listString);
-
-        return buddyInfoList;
+        System.out.println(buddyInfoList.toString());
+        ;
 
     }
-    public static ArrayList<BuddyInfo>removeBuddy(String name){
-        String test;
-        BuddyInfo myObj = new BuddyInfo(name);
-        buddyInfoList.remove(myObj);
+    public BuddyInfo removeBuddy(int index){
+        //String test;
+        if(index >=0 && index < buddyInfoList.size())
+            buddyInfoList.remove(index);
         System.out.println(buddyInfoList.toString());
-        return buddyInfoList;
+
+        return null;
     }
 }
