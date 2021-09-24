@@ -25,7 +25,8 @@ public class AddressBook extends BuddyInfo{
         //String nameDelete = myObj.nextLine();
 
         System.out.println("test");
-
+        System.out.println("Online Editor test");
+        
 
     }
     public void addBuddy(BuddyInfo buddy){
