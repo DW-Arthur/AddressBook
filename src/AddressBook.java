@@ -23,10 +23,13 @@ public class AddressBook extends BuddyInfo{
         addressBook.addBuddy(buddy);
         addressBook.removeBuddy(0);
         //String nameDelete = myObj.nextLine();
-
         System.out.println("test");
         System.out.println("Online Editor test");
         
+
+    }
+    public void newtest (){
+        System.out.println("new branch");
 
     }
     public void addBuddy(BuddyInfo buddy){
